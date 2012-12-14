@@ -22,7 +22,7 @@
 
     // Show alert if StackMob has not been initialized
     $(document).ready(function () {
-      if (StackMob.publicKey == "your public key") {
+      if (StackMob.publicKey == "your_public_key") {
         $("#init").show();
       }
     });
@@ -82,7 +82,8 @@
 
   <div id="init">
     <h4>Warning!</h4>
-    <p>Make sure you <a href="https://dashboard.stackmob.com/sdks/js/config">initialize StackMob</a> in this file (examples.html) before using it!</p>
+    <p>It looks like you haven't initilized this page yet.</p>
+    <p>Make sure you <a href="https://dashboard.stackmob.com/sdks/js/config" target="_blank">initialize StackMob</a> in this file (more-examples/index.html) before using it!</p>
   </div>
 
   <div class="left">
