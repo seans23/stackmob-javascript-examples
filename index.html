@@ -4,7 +4,11 @@
     <link href="http://www.stackmob.com/platform/favicon.ico" type="image/vnd.microsoft.icon" rel="icon" />
     <link href="http://www.stackmob.com/platform/favicon.png" type="image/png" rel="icon" />
     <link rel="stylesheet" href="index.css" />
-
+    <style type="text/css" media="screen">
+      /* <![CDATA[ */
+        li { padding-top: 10px; }
+      /* ]]> */
+    </style>
 		<!--
 		*************************************
 		STACKMOB JS SDK DEPENDENCIES
@@ -12,7 +16,7 @@
 		*************************************
 		-->
 		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
-		<script type="text/javascript" src="http://static.stackmob.com/js/stackmob-js-0.7.0-bundled-min.js"></script>
+		<script type="text/javascript" src="http://static.stackmob.com/js/stackmob-js-0.8.0-bundled-min.js"></script>
 
 		<!--
 		*************************************
@@ -23,6 +27,7 @@
 		*************************************
 		-->
 		<script type="text/javascript">
+      /* <![CDATA[ */
       // Initialize StackMob object
       // Copy your init data from here: https://dashboard.stackmob.com/sdks/js/config
       // Your other app information is here: https://dashboard.stackmob.com/settings
@@ -32,6 +37,7 @@
         publicKey: 'your_public_key',
         apiVersion : 0
       });
+      /* ]]> */
 		</script>
 
 		<!--
@@ -40,6 +46,7 @@
 		*************************************
 		-->
 		<script type="text/javascript">
+      /* <![CDATA[ */
       $(document).ready(function() {
 
         // Define your class/object
@@ -82,7 +89,7 @@
           }
         });
       });
-
+      /* ]]> */
 		</script>
 
 	</head>
@@ -134,12 +141,25 @@
     <div class="error">
       <h1>Waiting...</h1>
       <p>
-        If this message doesn't go away, something might be wrong.
-        Don't forget to <a href="https://dashboard.stackmob.com/sdks/js/config" target="_blank">initialize the JS SDK</a> then view this page 
-        through stackmobserver.py (located in this same directory). <a href="http://www.python.org/getit/" target="_blank">Requires Python 2.7+</a>
-      </p>
-      <p>
-        Please run this in <a href="https://dashboard.stackmob.com/sdks/js/config" target="_blank">StackMob's Local Runner</a> or through <a href="http://www.stackmob.com/devcenter/docs/StackMob-Hosted-HTML5:-GitHub" target="_blank">StackMob's GitHub-integrated hosting</a>.
+        If this message doesn't go away, something might be wrong.<br/><br/>
+        <h3>Troubleshooting tips:</h3>
+        <ul>
+          <li>
+            Don't forget to <a href="https://dashboard.stackmob.com/sdks/js/config" target="_blank">initialize the JS SDK</a> in this file (index.html)
+          </li>
+          <li>
+            You must view this file through a web server (ex: localhost:4567) not directly (ex: file://.../index.html).
+            <ul>
+              <li>
+                If you're running this through your own server, be sure to add your url (ex: http://localhost:1234) to your <a href="https://dashboard.stackmob.com/module/cors/settings">CORS whitelist</a>.
+              </li>
+              <li>
+                The StackMob Web Server is included in this package if you don't already have one. Just run
+                stackmobserver.py (located in this same directory). <a href="http://www.python.org/getit/" target="_blank">Requires Python 2.7+</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
       </p>
     </div>
 	</body>
