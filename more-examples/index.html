@@ -4,7 +4,7 @@
 
   <!-- StackMob Dependencies -->
   <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
-  <script type="text/javascript" src="http://static.stackmob.com/js/stackmob-js-0.8.0-bundled-min.js"></script>
+  <script type="text/javascript" src="http://static.stackmob.com/js/stackmob-js-0.9.0-bundled-min.js"></script>
 
   <!-- Example Dependencies -->
   <script type="text/javascript" src="http://static.stackmob.com/resources/js/jsonFormatter-0.1.0-min.js"></script>
@@ -14,8 +14,6 @@
     // Copy your init data from here: https://dashboard.stackmob.com/sdks/js/config
     // Your other app information is here: https://dashboard.stackmob.com/settings
     StackMob.init({
-      appName: 'your_app_name',
-      clientSubdomain: 'your_client_subdomain',
       publicKey: 'your_public_key',
       apiVersion : 0
     });
@@ -215,8 +213,9 @@
     <ul>
       <li><a id="createUserFB" href="javascript:void(0);">Create User with Facebook</a></li>
       <li><a id="loginFB" href="javascript:void(0);">Log into Facebook</a></li>
+      <li><a id="loginOrCreateFB" href="javascript:void(0);">Create if Needed and Log in to Facebook</a></li>
       <li><a id="linkFB" href="javascript:void(0);">Link user with Facebook</a></li>
-      <li><a id="getInfoFB" href="javascript:void(0);">Get Info from Facebook</a></li>
+      <li><a id="unlinkFB" href="javascript:void(0);">Unlink user from Facebook</a></li>
     </ul>
   </div>
 

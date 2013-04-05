@@ -342,9 +342,10 @@
             user.fetch({
               success: function(model) {
                 
-                model.setBinaryFile('pic', fileName, fileType, base64Content);
+                theUser = model;
+                theUser.setBinaryFile('pic', fileName, fileType, base64Content);
                 
-                model.save(StackMobExamples.debugCallback('Saving the binary file to the user'));  
+                theUser.save(StackMobExamples.debugCallback('Saving the binary file to the user'));  
               }
             });
             
@@ -470,18 +471,38 @@
         fblogin(login);
       };
 
+      var loginOrCreateFB = function(){
+        var loginOrCreate = function(authResponse){
+          var accessToken = authResponse.accessToken;
+          var user = new StackMob.User({ username: 'fbuser@email.com'});
+          user.loginWithFacebookAutoCreate(accessToken, false);
+        }
+        fblogin(loginOrCreate);
+      }
+
       var linkFB = function() {
         var link = function(authResponse) {
+          console.log(authResponse);
           var user = new StackMob.User();
           user.linkUserWithFacebook(authResponse.accessToken, false);
         }
         fblogin(link);
       }
 
+      var unlinkFB = function() {
+        var unlink = function(authResponse) {
+          console.log(authResponse);
+          var user = new StackMob.User();
+          user.unlinkUserFromFacebook();
+        }
+        fblogin(unlink);
+      }
 
       $('#createUserFB').click(createUserFB);
       $('#loginFB').click(loginFB);
+      $('#loginOrCreateFB').click(loginOrCreateFB);
       $('#linkFB').click(linkFB);
+      $('#unlinkFB').click(unlinkFB);
 
     });
 
@@ -497,7 +518,7 @@
       });
     });
   }).call();
-  
+
   (function() {
     $(document).ready(function() {
       $('#cc_withparams').click(function() {
