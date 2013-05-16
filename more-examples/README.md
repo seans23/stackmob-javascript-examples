@@ -17,7 +17,7 @@ This example is intended to run through all the various methods of the JS SDK.
 
 # Running this example
 
-<a href="https://developer.stackmob.com/sdks/js/config">Initialize the JS SDK</a> in the index.html
+<a href="https://dashboard.stackmob.com/sdks/js/config">Initialize the JS SDK</a> in the index.html
 
 Click on the various links to trigger an API call.  Some examples require you to click on one link before another.  For instance, you can only "Read a User" after you "Create a User".  It should generally be intuitive.  
 
